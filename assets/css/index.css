@@ -1,0 +1,356 @@
+@import url(./global.css);
+
+/* Header */
+
+.header {
+    position: relative;
+    margin-top: 50px;
+    padding: 100px 0 300px;
+    background: linear-gradient(-45deg, #56125b, #0f0f10, #271e6e);
+    background-size: 400% 400%;
+    animation: gradient;
+}
+
+.header::after {
+    content: "";
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, var(--primary-color), transparent);
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 40px;
+    margin: auto;
+}
+
+.header-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.header-icon {
+    object-fit: contain;
+}
+
+.header-title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.header-title-light {
+    display: block;
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+.header .text-small {
+    max-width: 300px;
+    text-align: center;
+}
+
+.divider {
+    width: 70%;
+    max-width: 700px;
+    height: 5px;
+    background: var(--divider-bg-color);
+}
+
+.offer {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.offer-price {
+    font-family: "Raleway", sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.offer-price-small {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+
+.header-button {
+    animation: wiggle 2.2s linear infinite;
+}
+
+/* Main */
+
+main {
+    background: url("../images/background-movies-series.png") no-repeat;
+    background-size: cover;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* Subscription Plans */
+
+.subscription {
+    background: url(../images/background-movies-series.png) no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.subscription-plans {
+    display: flex;
+    justify-content: space-around;
+    gap: 80px;
+    margin: 40px 0;
+    perspective: 2000px;
+    perspective-origin: top;
+}
+
+.subscription-card {
+    background: var(--card-bg-color);
+    padding: 40px 60px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    justify-content: space-between;
+    transition: transform 1s ease-in-out;
+}
+
+.subscription-plans:has(.subscription-card:nth-child(1):hover) .subscription-card:nth-child(2) {
+    transform: rotateY(-45deg);
+}
+
+.subscription-plans:has(.subscription-card:nth-child(2):hover) .subscription-card:nth-child(1) {
+    transform: rotateY(45deg);
+}
+
+.subscription-desc {
+    text-align: left;
+    list-style: none;
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+    padding-left: 14px;
+}
+
+.subscription-price {
+    font-size: 2rem;
+    font-family: "Raleway", sans-serif;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.subscription-price .text-small {
+    color: var(--text-color);
+}
+
+.subscription-desc::marker {
+    content: "+";
+    font-size: 2rem;
+    margin: 0 8px 0 0;
+}
+
+.subscription-plan {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+}
+
+/* Contents */
+
+.contents {
+    margin: 100px auto;
+}
+
+.contents-container {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.contents-card {
+    border-radius: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+    transition: transform 0.8s, background 0.8s, border 1s;
+}
+
+.contents-card:hover {
+    transform: scale(1.05);
+    border: 2px solid var(--tertiary-color);
+}
+
+.contents-card:hover .contents-image {
+    opacity: 0;
+}
+
+.contents-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: opacity 2s;
+}
+
+/* HBO */
+
+.contents-card:nth-child(1):hover {
+    background-image: url("../images/hbo-hover_0.webp");
+}
+
+/* Max Originals */
+
+.contents-card:nth-child(2):hover {
+    background-image: url("../images/MAX-Hover.webp");
+}
+
+/* DC */
+
+.contents-card:nth-child(3):hover {
+    background-image: url("../images/DC-Hover.webp");
+}
+
+/* WB */
+
+.contents-card:nth-child(4):hover {
+    background-image: url("../images/WB-Hover.webp");
+}
+
+/* CN */
+
+.contents-card:nth-child(5):hover {
+    background-image: url("../images/CN-Hover.png");
+}
+
+/* UEFA Champions League */
+
+.contents-card:nth-child(6):hover {
+    background-image: url("../images/UCL-Hover.webp");
+}
+
+
+
+/* Animations */
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes wiggle {
+
+    0%,
+    10% {
+        transform: rotate(0);
+    }
+
+    15% {
+        transform: rotate(-15deg);
+    }
+
+    20% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    35% {
+        transform: rotate(-10deg);
+    }
+
+    40%,
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1200px) {
+    .subscription-plans {
+        gap: 40px;
+    }
+
+    .contents-container {
+        gap: 32px;
+    }
+}
+
+@media screen and (max-width: 1140px) {
+    .subscription-plans {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subscription-card {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contents-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .subscription-price {
+        font-size: 1.5rem;
+    }
+
+    .subscription-desc {
+        font-size: 1rem;
+    }
+
+    .subscription-plan {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .subscription-card {
+        padding: 40px;
+    }
+
+    .contents-container {
+        grid-template-columns: repeat(6, 100%);
+        grid-auto-flow: column;
+        overflow: auto hidden;
+    }
+}
+
+@media (pointer: coarse) {
+    .contents-card:hover {
+        transform: none;
+    }
+
+    .subscription-plans:has(.subscription-card:nth-child(1):hover) .subscription__card:nth-child(2),
+    .subscription-plans:has(.subscription-card:nth-child(2):hover) .subscription__card:nth-child(1) {
+        transform: none;
+    }
+}
